@@ -8,14 +8,6 @@ class DbConnection:
     # Clean up the database. You do not need to change this function.
     def close(self):
         self.db.close()
-        
-    # This function should create the two tables registrations and models.
-    # You can assume the tables do not exist.
-    def createTables(self):
-        sql = ["CREATE TABLE IF NOT EXISTS models(modelId INTEGER PRIMARY KEY, brand TEXT, maxSpeed REAL);", "CREATE TABLE IF NOT EXISTS registrations(carID TEXT PRIMARY KEY, modelId INTEGER, registrationYear INTEGER, price REAL, FOREIGN KEY(modelId) REFERENCES models(modelId));"]
-        for i in sql:
-            self.c.execute(i)
-            self.db.commit()
     
     #IgnoreList
     def getIgnoreList(self):
