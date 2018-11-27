@@ -17,8 +17,10 @@ class DbConnection:
             self.c.execute(i)
             self.db.commit()
     
+    #IgnoreList
     def getIgnoreList(self):
         sql = "SELECT * FROM IgnoreList;"
+        self.c.execute(sql)
         values = self.c.fetchall()
         resultArr = []
         for i in values:
@@ -28,7 +30,32 @@ class DbConnection:
     def insertIntoList(self, arr):
         sql = "INSERT INTO IgnoreList (Value) VALUES (?);"
         for i in arr:
-            self.c.execute("INSERT INTO IgnoreList (Value) VALUES (?);",(str(i),))
+            self.c.execute(sql,(str(i),))
         self.db.commit()
 
-registry = DbConnection("Database/WikiDB.sqlite")
+    #XML Files
+    def insertIntoXmlList(self, file):
+        sql = "INSERT INTO XmlFiles (XmlFile, Name) VALUES(?,?);"
+        self.c.execute(sql, (str(file),))
+        self.db.commit()
+
+    def getAllXmlFiles(self):
+        sql = "SELECT * FROM XmlFiles;"
+        self.c.execute(sql)
+        values = self.c.fetchall()
+        resultArr = []
+        for i in values:
+            resultArr.append([i[1], i[2]])
+        return resultArr
+
+    def getXmlFile(self, fileName):
+        sql = "SELECT * FROM XmlFiles WHERE Name = ?;"
+        self.c.execute(sql, (fileName,))
+        value = self.c.fetchone()
+
+        return value
+
+
+#registry = DbConnection("Database/WikiDB.sqlite")
+
+#print(registry.getIgnoreList())
