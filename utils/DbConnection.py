@@ -34,9 +34,9 @@ class DbConnection:
         self.db.commit()
 
     #XML Files
-    def insertIntoXmlList(self, file):
+    def insertIntoXmlList(self, file, name):
         sql = "INSERT INTO XmlFiles (XmlFile, Name) VALUES(?,?);"
-        self.c.execute(sql, (str(file),))
+        self.c.execute(sql, (str(file), str(name)))
         self.db.commit()
 
     def getAllXmlFiles(self):
@@ -55,7 +55,17 @@ class DbConnection:
 
         return value
 
+#Initialize connection
+registry = DbConnection("Database/WikiDB.sqlite")
 
-#registry = DbConnection("Database/WikiDB.sqlite")
+#Insert into stoplist
+'''
+registry.insertIntoList('test')
+'''
 
-#print(registry.getIgnoreList())
+#Insert into XmlFiles
+'''
+with open('text-files/batman.xml', 'r') as myfile:
+    data=myfile.read().replace('\n', '')
+registry.insertIntoXmlList(data, "Batman")
+'''
