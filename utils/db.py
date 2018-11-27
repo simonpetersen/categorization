@@ -29,6 +29,7 @@ class DbConnection:
         sql = "SELECT * FROM IgnoreList WHERE Value = ?"
         self.c.execute(sql, (word,))
         result = self.c.fetchone()
+        self.db.commit()
         return result is not None
 
     #XML Files
@@ -57,7 +58,7 @@ class DbConnection:
 #registry = DbConnection("WikiDB.sqlite")
 
 #Insert into stoplist
-#registry.insertIntoList('test')
+#registry.insertIntoList(['new'])
 
 #Insert into XmlFiles
 '''

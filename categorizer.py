@@ -1,6 +1,6 @@
 from mrjob.job import MRJob
 from mrjob.step import MRStep
-from utils.DbConnection import DbConnection
+from utils.db import DbConnection
 
 
 class MRCategorizer(MRJob):
@@ -21,7 +21,15 @@ class MRCategorizer(MRJob):
 
     def reducer_find_max(self, _, word_counts):
         sorted_counts = sorted(list(word_counts), key=lambda w: w[0], reverse=True)
-        categories = sorted_counts[:10]
+        categories = []
+        for count in sorted_counts:
+            word = count[1]
+            matches = list(filter(lambda c: c[1] == word[:len(c[1])], categories))
+            if len(matches) > 0:
+                continue
+            categories.append(count)
+            if len(categories) == 10:
+                return categories
         return categories
 
     def steps(self):

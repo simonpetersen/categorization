@@ -1,5 +1,5 @@
 import utils.xmlparser
-from utils.DbConnection import DbConnection
+from utils.db import DbConnection
 
 filename = "Batman"
 connection = DbConnection("utils/WikiDB.sqlite")
