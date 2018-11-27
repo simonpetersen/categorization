@@ -1,8 +1,8 @@
 import sqlite3
 
 class DbConnection:
-    def __init__(self, databaseName):
-        self.db = sqlite3.connect(databaseName)
+    def __init__(self, database_name):
+        self.db = sqlite3.connect(database_name)
         self.c = self.db.cursor()
     
     # Clean up the database. You do not need to change this function.
@@ -24,6 +24,12 @@ class DbConnection:
         for i in arr:
             self.c.execute(sql,(str(i),))
         self.db.commit()
+
+    def wordIsInIgnoreList(self, word):
+        sql = "SELECT * FROM IgnoreList WHERE Value = ?"
+        self.c.execute(sql, (word,))
+        result = self.c.fetchone()
+        return result is not None
 
     #XML Files
     def insertIntoXmlList(self, file, name):
@@ -48,12 +54,10 @@ class DbConnection:
         return value
 
 #Initialize connection
-registry = DbConnection("Database/WikiDB.sqlite")
+#registry = DbConnection("WikiDB.sqlite")
 
 #Insert into stoplist
-'''
-registry.insertIntoList('test')
-'''
+#registry.insertIntoList('test')
 
 #Insert into XmlFiles
 '''

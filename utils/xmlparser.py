@@ -1,6 +1,9 @@
+import re
+
+
 class XmlParser:
-    def __init__(self, filename):
-        self.file = open(filename).read()
+    def __init__(self, file):
+        self.file = file
 
     def get_start_tag(self, t, line):
         tag = '<%s' % t
@@ -25,7 +28,8 @@ class XmlParser:
         id = self.element('id', page_xml)
         text_xml = self.element('text', page_xml)
         cleanned_text = self.clean_text(text_xml)
-        print(cleanned_text)
+        #print(cleanned_text)
+        return cleanned_text
 
     def remove_lines(self, line, start, end):
         while start in line:
@@ -94,4 +98,5 @@ class XmlParser:
         line = line.replace('\'\'', '')
         line = line.replace('t;', '')
         line = self.remove_categories(line)
+        line = re.sub(r'[^\w\']', ' ', line)
         return line.strip()
