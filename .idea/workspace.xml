@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6afd7d67-cd14-4e98-801d-fc48cd28ef58" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/runner.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text-files/game-of-thrones.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text-files/obama.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text-files/superman.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/categorizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/categorizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/DbConnection.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/DbConnection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/text-files/content.txt" beforeDir="false" afterPath="$PROJECT_DIR$/text-files/content.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/WikiDB.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/utils/WikiDB.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/xmlparser.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/xmlparser.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +23,10 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/article_categorization$categorizer__1_.coverage" NAME="categorizer (1) Coverage Results" MODIFIED="1543322519693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/article_categorization$runner.coverage" NAME="parser Coverage Results" MODIFIED="1543334083357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/article_categorization$db.coverage" NAME="db Coverage Results" MODIFIED="1543426329271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/article_categorization$DbConnection.coverage" NAME="DbConnection Coverage Results" MODIFIED="1543333576047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
-    <SUITE FILE_PATH="coverage/article_categorization$categorizer.coverage" NAME="categorizer Coverage Results" MODIFIED="1543334084251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/article_categorization$parser.coverage" NAME="runner Coverage Results" MODIFIED="1543426711482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/article_categorization$categorizer.coverage" NAME="categorizer Coverage Results" MODIFIED="1543410390331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -38,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/xmlparser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="96" column="41" lean-forward="true" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
+            <state relative-caret-position="368">
+              <caret line="100" column="58" selection-start-line="100" selection-start-column="58" selection-end-line="100" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -47,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/categorizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+            <state relative-caret-position="253">
+              <caret line="35" column="78" selection-start-line="35" selection-start-column="78" selection-end-line="35" selection-end-column="78" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -56,20 +65,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/utils/DbConnection.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="65" column="21" lean-forward="true" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+            <state relative-caret-position="75">
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/text-files/grey.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="22" selection-start-column="22" selection-end-column="22" />
+            <state relative-caret-position="28">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,6 +112,11 @@
       <find>unicode</find>
       <find>decode</find>
       <find>'</find>
+      <find>rebellion</find>
+      <find>grey</find>
+      <find>US</find>
+      <find>u.</find>
+      <find>t;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -104,10 +130,12 @@
         <option value="$PROJECT_DIR$/wikiextractor.py" />
         <option value="$PROJECT_DIR$/utils/xml-parser.py" />
         <option value="$PROJECT_DIR$/utils/categorizer.py" />
-        <option value="$PROJECT_DIR$/utils/xmlparser.py" />
-        <option value="$PROJECT_DIR$/runner.py" />
-        <option value="$PROJECT_DIR$/categorizer.py" />
         <option value="$PROJECT_DIR$/utils/DbConnection.py" />
+        <option value="$PROJECT_DIR$/parser.py" />
+        <option value="$PROJECT_DIR$/categorizer.py" />
+        <option value="$PROJECT_DIR$/utils/xmlparser.py" />
+        <option value="$PROJECT_DIR$/utils/db.py" />
+        <option value="$PROJECT_DIR$/runner.py" />
       </list>
     </option>
   </component>
@@ -135,11 +163,6 @@
               <item name="article-categorization" type="462c0819:PsiDirectoryNode" />
               <item name="text-files" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="article-categorization" type="b2602c69:ProjectViewProjectNode" />
-              <item name="article-categorization" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -154,6 +177,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/text-files" />
       <recent name="$PROJECT_DIR$/utils" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Database" />
@@ -171,8 +195,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.categorizer">
-    <configuration name="categorizer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.runner">
+    <configuration name="db" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="article-categorization" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -180,23 +204,21 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/categorizer.py" />
-      <option name="PARAMETERS" value="text-files/content.txt" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/db.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2">
-        <option name="RunConfigurationTask" enabled="true" run_configuration_name="runner" run_configuration_type="PythonConfigurationType" />
-      </method>
+      <method v="2" />
     </configuration>
-    <configuration name="parser" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="runner" type="PythonConfigurationType" factoryName="Python">
       <module name="article-categorization" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -209,7 +231,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/parser.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/runner.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -219,12 +241,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.parser" />
-      <item itemvalue="Python.categorizer" />
+      <item itemvalue="Python.runner" />
+      <item itemvalue="Python.db" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.categorizer" />
+        <item itemvalue="Python.db" />
       </list>
     </recent_temporary>
   </component>
@@ -238,24 +260,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1542703888770</updated>
-      <workItem from="1543237382518" duration="14291000" />
+      <workItem from="1543237382518" duration="14503000" />
+      <workItem from="1543394986497" duration="497000" />
+      <workItem from="1543404968498" duration="5101000" />
+      <workItem from="1543420133936" duration="3739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14291000" />
+    <option name="totallyTimeSpent" value="23840000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="822" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26752505" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27825466" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3219178" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4671233" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.37260273" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -275,54 +300,8 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/DbConnection.py</url>
-          <line>62</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/categorizer.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/categorizer.py" />
     <entry file="file://$PROJECT_DIR$/wikiextractor.py" />
-    <entry file="file://$PROJECT_DIR$/text-files/batman.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7624">
-          <caret line="554" column="30" selection-start-line="554" selection-start-column="30" selection-end-line="554" selection-end-column="30" />
-          <folding>
-            <element signature="e#3515#3519#0" expanded="true" />
-            <element signature="e#3585#3589#0" expanded="true" />
-            <element signature="e#58926#58930#0" expanded="true" />
-            <element signature="e#59088#59092#0" expanded="true" />
-            <element signature="e#59255#59259#0" expanded="true" />
-            <element signature="e#74237#74241#0" expanded="true" />
-            <element signature="e#74284#74288#0" expanded="true" />
-            <element signature="e#79555#79559#0" expanded="true" />
-            <element signature="e#79613#79617#0" expanded="true" />
-            <element signature="e#98086#98090#0" expanded="true" />
-            <element signature="e#107261#107265#0" expanded="true" />
-            <element signature="e#110837#110841#0" expanded="true" />
-            <element signature="e#112314#112318#0" expanded="true" />
-            <element signature="e#113172#113176#0" expanded="true" />
-            <element signature="e#113674#113678#0" expanded="true" />
-            <element signature="e#120744#120748#0" expanded="true" />
-            <element signature="e#132924#132928#0" expanded="true" />
-            <element signature="e#133493#133497#0" expanded="true" />
-            <element signature="e#134012#134016#0" expanded="true" />
-            <element signature="e#143238#143242#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/text-files/content.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -330,41 +309,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/xmlparser.py">
+    <entry file="file://$PROJECT_DIR$/text-files/superman.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="96" column="41" lean-forward="true" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
-        </state>
+        <state relative-caret-position="-6807" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
+    <entry file="file://$PROJECT_DIR$/text-files/grey.xml">
+      <provider editor-type-id="LargeFileEditor">
+        <state relative-caret-position="-2">
+          <caret line="67" column="14" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
         </state>
       </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/mrjob/job.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="580" selection-start-line="580" selection-end-line="580" />
+        <state relative-caret-position="204">
+          <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/categorizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+        <state relative-caret-position="253">
+          <caret line="35" column="78" selection-start-line="35" selection-start-column="78" selection-end-line="35" selection-end-column="78" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/DbConnection.py">
+    <entry file="file://$PROJECT_DIR$/utils/xmlparser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="65" column="21" lean-forward="true" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+        <state relative-caret-position="368">
+          <caret line="100" column="58" selection-start-line="100" selection-start-column="58" selection-end-line="100" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

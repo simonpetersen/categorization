@@ -4,7 +4,7 @@ class DbConnection:
     def __init__(self, database_name):
         self.db = sqlite3.connect(database_name)
         self.c = self.db.cursor()
-    
+
     # Clean up the database. You do not need to change this function.
     def close(self):
         self.db.close()
@@ -62,7 +62,8 @@ class DbConnection:
 
 #Insert into XmlFiles
 '''
-with open('text-files/batman.xml', 'r') as myfile:
-    data=myfile.read().replace('\n', '')
-registry.insertIntoXmlList(data, "Batman")
+with open('../text-files/game-of-thrones.xml') as myfile:
+    data = myfile.read()
+    print(data)
+    registry.insertIntoXmlList(data, "Game of Thrones")
 '''

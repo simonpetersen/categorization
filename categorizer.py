@@ -16,7 +16,7 @@ class MRCategorizer(MRJob):
         yield key, sum(values)
 
     def reducer_count_words(self, key, values):
-        if key not in MRCategorizer.ignored_words and key != 's':
+        if key not in MRCategorizer.ignored_words:
             yield None, (sum(values), key)
 
     def reducer_find_max(self, _, word_counts):

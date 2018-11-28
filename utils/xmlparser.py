@@ -28,7 +28,6 @@ class XmlParser:
         id = self.element('id', page_xml)
         text_xml = self.element('text', page_xml)
         cleanned_text = self.clean_text(text_xml)
-        #print(cleanned_text)
         return cleanned_text
 
     def remove_lines(self, line, start, end):
@@ -47,14 +46,18 @@ class XmlParser:
 
     def remove(self, line, start, end, index, start_index):
         open_elements = 0
-        for i in range(start_index, len(line)):
+        i = start_index
+        while i < len(line):
             s, e = line[i:i + len(start)], line[i:i + len(end)]
             if e == end:
                 if open_elements == 0:
                     return line[:index] + line[i + len(end):]
                 open_elements -= 1
+                i += len(end) - 1
             elif s == start:
                 open_elements += 1
+                i += len(start) - 1
+            i += 1
         return line
 
     # Removes elements that can't be nested
@@ -92,11 +95,9 @@ class XmlParser:
         line = self.remove_single_elements(line, '<ref', '</ref>')
         line = self.remove_references(line, '[[File', '[[', ']]')
         line = self.remove_tags(line)
-        line = line.replace('[[', '')
-        line = line.replace(']]', '')
         line = line.replace('\'\'\'', '')
         line = line.replace('\'\'', '')
-        line = line.replace('t;', '')
         line = self.remove_categories(line)
-        line = re.sub(r'[^\w\']', ' ', line)
+        # Remove all special characters except ' and space
+        line = re.sub(r'[^\w\'\s]', '', line)
         return line.strip()
