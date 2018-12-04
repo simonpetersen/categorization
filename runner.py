@@ -9,7 +9,7 @@ from utils.db import DbConnection
 # - Game of Thrones
 
 ##### Read Xml from db
-filename = "Superman"
+filename = "Obama"
 connection = DbConnection("utils/WikiDB.sqlite")
 file = connection.getXmlFile(filename)[1]
 parser = utils.xmlparser.XmlParser(file)

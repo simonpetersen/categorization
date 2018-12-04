@@ -37,11 +37,11 @@ class XmlParser:
             line = self.remove(line, start, end, index, start_index)
         return line
 
-    def remove_references(self, line, ref, start, end):
+    def remove_references(self, line, ref, end):
         while ref in line:
             index = line.index(ref)
             start_index = index + len(ref)
-            line = self.remove(line, start, end, index, start_index)
+            line = self.remove(line, ref, end, index, start_index)
         return line
 
     def remove(self, line, start, end, index, start_index):
@@ -93,7 +93,7 @@ class XmlParser:
         line = line.replace('&nbsp;', '')
         line = self.remove_lines(line, '{{', '}}')
         line = self.remove_single_elements(line, '<ref', '</ref>')
-        line = self.remove_references(line, '[[File', '[[', ']]')
+        line = self.remove_references(line, '[[File', ']]')
         line = self.remove_tags(line)
         line = line.replace('\'\'\'', '')
         line = line.replace('\'\'', '')
