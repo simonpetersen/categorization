@@ -15,11 +15,11 @@ class MRCategorizer(MRJob):
     def combiner_count_words(self, key, values):
         yield key, sum(values)
 
-    def reducer_count_words(self, key, values):
+    def reducer_remove_stopwords(self, key, values):
         if key not in MRCategorizer.ignored_words:
             yield None, (sum(values), key)
 
-    def reducer_find_max(self, _, word_counts):
+    def reducer_find_categories(self, _, word_counts):
         sorted_counts = sorted(list(word_counts), key=lambda w: w[0], reverse=True)
         categories = []
         for count in sorted_counts:
@@ -34,8 +34,8 @@ class MRCategorizer(MRJob):
 
     def steps(self):
         return [MRStep(mapper=self.mapper, combiner=self.combiner_count_words,
-                       reducer=self.reducer_count_words),
-                MRStep(reducer=self.reducer_find_max)]
+                       reducer=self.reducer_remove_stopwords),
+                MRStep(reducer=self.reducer_find_categories)]
 
 
 if __name__ == '__main__':
