@@ -17,15 +17,16 @@ class MRCategorizer(MRJob):
 
     def reducer_remove_stopwords(self, key, values):
         if key not in MRCategorizer.ignored_words:
-            yield None, (sum(values), key)
+            yield None, (key, sum(values))
 
     def reducer_find_categories(self, _, word_counts):
-        sorted_counts = sorted(list(word_counts), key=lambda w: w[0], reverse=True)
+        sorted_counts = sorted(list(word_counts), key=lambda w: w[1], reverse=True)
         categories = []
         for count in sorted_counts:
-            word = count[1]
-            matches = list(filter(lambda c: c[1] == word[:len(c[1])], categories))
-            if len(matches) > 0:
+            word = count[0]
+            matches_shorter = list(filter(lambda c: c[0][:len(word)] == word, categories))
+            matches_longer = list(filter(lambda c: c[0][:len(word)] == word[:len(c[0])], categories))
+            if len(matches_shorter) > 0 or len(matches_longer) > 0:
                 continue
             categories.append(count)
             if len(categories) == 10:

@@ -2,21 +2,24 @@ import utils.xmlparser
 from categorizer import MRCategorizer
 from utils.db import DbConnection
 
-##### Files in DB #####
-# - Batman
-# - Superman
-# - Obama
-# - Game of Thrones
-
-##### Read Xml from db
-filename = "Obama"
 connection = DbConnection("utils/WikiDB.sqlite")
-file = connection.getXmlFile(filename)[1]
+list_of_articles = connection.getAllXmlFiles()
+article_names = list(map(lambda a: a[1], list_of_articles))
+print('#### Available articles:')
+for n in article_names:
+    print(n)
+print('#####')
+line = input('Write the name of the article you want to categorize: ')
+while line not in article_names:
+    line = input('Invalid article. Please try again: ')
+
+##### Extract text from xml
+file = list(filter(lambda a: a[1] == line, list_of_articles))[0][0]
 parser = utils.xmlparser.XmlParser(file)
 text = parser.parse()
-print("Article %s parsed." % filename)
+print("Article %s parsed." % line)
 
-##### Write parsed text to content-file
+##### Write text to content-file
 filelocation = "text-files/content.txt"
 file = open(filelocation, 'w')
 file.write(text)
@@ -27,4 +30,4 @@ job = MRCategorizer(args=[filelocation])
 with job.make_runner() as runner:
     runner.run()
     for key, value in job.parse_output(runner.cat_output()):
-        print(value)
+        print(key)
