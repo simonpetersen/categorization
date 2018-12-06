@@ -59,7 +59,7 @@ class MRCategorizerAll(MRJob):
 
     def reducer_find_categories(self, _, word_counts):
         sorted_counts = sorted(list(word_counts), key=lambda w: w[1], reverse=True)
-        count_treshold = 20
+        count_threshold = 20
         sorted_counts2 = list(filter(lambda c: c[1] >= count_treshold, sorted_counts))
         categories = []
         merged_categories = []
