@@ -25,8 +25,13 @@ class DbConnection:
             self.c.execute(sql,(str(i),))
         self.db.commit()
 
+    def deleteFromList(self, word):
+        sql = "DELETE FROM IgnoreList WHERE Value = ?;"
+        self.execute(sql, (word,))
+        self.db.commit()
+
     def wordIsInIgnoreList(self, word):
-        sql = "SELECT * FROM IgnoreList WHERE Value = ?"
+        sql = "SELECT * FROM IgnoreList WHERE Value = ?;"
         self.c.execute(sql, (word,))
         result = self.c.fetchone()
         self.db.commit()
@@ -53,6 +58,11 @@ class DbConnection:
         value = self.c.fetchone()
 
         return value
+
+    def deleteXmlFile(self, fileName):
+        sql = "DELETE FROM XmlFiles WHERE Name = ?;"
+        self.c.execute(sql, (fileName,))
+        self.db.commit()
 
 #Initialize connection
 #registry = DbConnection("WikiDB.sqlite")
